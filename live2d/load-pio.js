@@ -206,5 +206,5 @@ window.onload = 加载圣·嘉然
 
 // 切换网页 Display Mode
 function changeDisplayMode() {
-  $('body').toggleClass('display-mode-normal display-mode-dark')
+  $('html').toggleClass('display-mode-normal display-mode-dark')
 }
