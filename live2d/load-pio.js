@@ -1,4 +1,4 @@
-var 引流 = ['https://0x403.com', 'https://twitter.com/cy920820']
+var 引流 = ['https://0x403.com', 'https://twitter.com/cy920820', 'https://www.instagram.com/6379616e/']
 
 const initConfig = {
   mode: 'fixed',
@@ -15,7 +15,7 @@ const initConfig = {
       { selector: '.post-content a, .page-content a, .post a', type: 'link' },
     ],
   },
-  night: 'changeDisplayMode()',
+  // night: 'changeDisplayMode()',
   model: ['https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Diana/Diana.model3.json', 'https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Ava/Ava.model3.json'],
   tips: true,
   onModelLoad: onModelLoad,
@@ -204,7 +204,28 @@ function onModelLoad(model) {
 var pio_reference
 window.onload = 加载圣·嘉然
 
+const setLocal = function (key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value))
+}
+const getLocal = function (key) {
+  const value = window.localStorage.getItem(key)
+  return JSON.parse(value)
+}
+
+initDisplayMode()
+
+function initDisplayMode() {
+  let displayMode = getLocal('display-mode')
+  if (!displayMode) {
+    setLocal('display-mode', 'dark')
+    displayMode = 'dark'
+  } else if (displayMode === 'dark') {
+    document.documentElement.classList.add(`display-mode-${displayMode}`)
+  }
+}
+
 // 切换网页 Display Mode
 function changeDisplayMode() {
-  $('html').toggleClass('display-mode-normal display-mode-dark')
+  $('html').toggleClass('display-mode-dark')
+  setLocal('display-mode', $('html').hasClass('display-mode-dark') ? 'dark' : 'normal')
 }
