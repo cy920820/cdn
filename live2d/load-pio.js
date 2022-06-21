@@ -16,7 +16,7 @@ const initConfig = {
     ],
   },
   // night: 'changeDisplayMode()',
-  model: ['https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Diana/Diana.model3.json', 'https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Ava/Ava.model3.json'],
+  model: ['https://cdn.jsdelivr.net/gh/cy920820/cdn/live2d/Diana/Diana.model3.json', 'https://cdn.jsdelivr.net/gh/cy920820/cdn/live2d/Ava/Ava.model3.json'],
   tips: true,
   onModelLoad: onModelLoad,
 }
